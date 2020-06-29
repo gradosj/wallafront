@@ -2,7 +2,19 @@ import React from 'react'
 
 const Anuncios = () => {
         return (
-            <h1>Desde Anuncios</h1>
+            <div className="contenedor-app">
+                <aside>
+
+                </aside>
+
+                <div className="seccion-principal">
+                    <main>
+                        <div className="contenedor-tareas">
+                            
+                        </div>
+                    </main>
+                </div>
+            </div>
         );
 }
 

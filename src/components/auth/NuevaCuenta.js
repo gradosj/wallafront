@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import {Link} from 'react-router-dom';
 
-const Login = () => {
+const NuevaCuenta = () => {
     // State iniciar sesion
     const [usuario, guardarUsuario] = useState({
+        nombre: '',
         email: '',
-        password: ''
+        password: '',
+        confirmar: ''
     });
 
     //extrear de usuario
-    const {email, password} = usuario;
+    const {nombre, email, password, confirmar} = usuario;
     const onChange = e =>{
         guardarUsuario({
             ...usuario,
@@ -18,10 +20,8 @@ const Login = () => {
 
     }
 
-
     const onSubmit = e => {
         e.preventDefault();
-
         
     }
 
@@ -38,7 +38,7 @@ const Login = () => {
                             id="nombre"
                             name="nombre"
                             placeholder="Tu nombre"
-                            value="Nombre"
+                            value={nombre}
                             onChange={onChange}
                         />
                     </div>
@@ -74,7 +74,7 @@ const Login = () => {
                             id="confirmar"
                             name="password"
                             placeholder="Repite tu pasword"
-                            value={password}
+                            value={confirmar}
                             onChange={onChange}
                         />
                     </div>
@@ -90,4 +90,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default NuevaCuenta;
