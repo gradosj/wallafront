@@ -72,7 +72,7 @@ const NuevaCuenta = () => {
                         <input
                             type="password"
                             id="confirmar"
-                            name="password"
+                            name="confirmar"
                             placeholder="Repite tu pasword"
                             value={confirmar}
                             onChange={onChange}
