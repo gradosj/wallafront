@@ -1,13 +1,12 @@
 import React, {Fragment, useState, useContext} from 'react';
 import AnunciosContext from '../../context/anuncios/anunciosContext';
 
-
 const NuevoAnuncion = () => {
 
     // Obtener el state del formulario
 
     const anunciosContext = useContext(AnunciosContext);
-    const {formulario} = anunciosContext;
+    const {formulario, mostrarFormulario} = anunciosContext;
 
     //State para anuncios
     const [anuncio, guardarAnuncio] = useState({
@@ -30,6 +29,7 @@ const NuevoAnuncion = () => {
         <button
             type="button"
             className="btn btn-block btn-primario"
+            onClick={() => mostrarFormulario()}
             > Nuevo Anuncio </button>
 
             {
@@ -44,10 +44,7 @@ const NuevoAnuncion = () => {
                                 name="nombre"
                                 value={nombre}
                                 onChange={onChangeAnuncio}
-                            />
-                
-                            
-                
+                            />                            
                 
                         </form>
 

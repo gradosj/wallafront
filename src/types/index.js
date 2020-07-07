@@ -1,0 +1,1 @@
+export const FORMULARIO_ANUNCIO = 'ANUNCIO_ANUNCIO';
