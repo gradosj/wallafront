@@ -1,7 +1,13 @@
-import React, {Fragment,useState} from 'react';
+import React, {Fragment, useState, useContext} from 'react';
+import AnunciosContext from '../../context/anuncios/anunciosContext';
 
 
 const NuevoAnuncion = () => {
+
+    // Obtener el state del formulario
+
+    const anunciosContext = useContext(AnunciosContext);
+    const {formulario} = anunciosContext;
 
     //State para anuncios
     const [anuncio, guardarAnuncio] = useState({
@@ -25,22 +31,30 @@ const NuevoAnuncion = () => {
             type="button"
             className="btn btn-block btn-primario"
             > Nuevo Anuncio </button>
+
+            {
+                formulario  ? 
+                    (
+                        <form
+                        className="formulario-nuevo-anuncio">
+                            <input
+                                type="text"
+                                className="input-text"
+                                placeholder="Nombre Proyecto"
+                                name="nombre"
+                                value={nombre}
+                                onChange={onChangeAnuncio}
+                            />
+                
+                            
+                
+                
+                        </form>
+
+                    ) : null
+            }
     
-        <form
-        className="formulario-nuevo-anuncio">
-            <input
-                type="text"
-                className="input-text"
-                placeholder="Nombre Proyecto"
-                name="nombre"
-                value={nombre}
-                onChange={onChangeAnuncio}
-            />
-
-            
-
-
-        </form>
+       
         </Fragment>
 
     );
