@@ -1,21 +1,23 @@
-import React from 'react';
+import React from "react";
 
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import Login from './components/auth/Login';
-import NuevaCuenta from './components/auth/NuevaCuenta';
-import Anuncios from './components/anuncios/Anuncios';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Login from "./components/auth/Login";
+import NuevaCuenta from "./components/auth/NuevaCuenta";
+import Anuncios from "./components/anuncios/Anuncios";
+
+import AnunciosState from "./context/anuncios/anunciosState";
 
 function App() {
   return (
-    <Router>
+    <AnunciosState>
+      <Router>
         <Switch>
           <Route exact path="/" component={Login} />
           <Route exact path="/nueva-cuenta" component={NuevaCuenta} />
           <Route exact path="/anuncios" component={Anuncios} />
-
         </Switch>
-    </Router>
-    
+      </Router>
+    </AnunciosState>
   );
 }
 
