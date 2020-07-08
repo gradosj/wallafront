@@ -8,8 +8,8 @@ const NuevoAnuncion = () => {
   const {
     formulario,
     mostrarFormulario,
-    mostrarFavoritos,
-    datosPersonales,
+    listadoFavoritos,
+    mostrarDatPers,
   } = anunciosContext;
 
   //State para anuncios
@@ -54,7 +54,7 @@ const NuevoAnuncion = () => {
       <button
         type="button"
         className="btn btn-block btn-primario"
-        onClick={() => mostrarFavoritos()}
+        onClick={() => listadoFavoritos()}
       >
         {" "}
         Favoritos{" "}
@@ -63,7 +63,7 @@ const NuevoAnuncion = () => {
       <button
         type="button"
         className="btn btn-block btn-primario"
-        onClick={() => datosPersonales()}
+        onClick={() => mostrarDatPers()}
       >
         {" "}
         Datos Personales{" "}

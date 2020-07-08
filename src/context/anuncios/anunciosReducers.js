@@ -1,20 +1,28 @@
-import {FORMULARIO_ANUNCIO, LISTADO_FAVORITOS} from '../../types';
+import {
+  FORMULARIO_ANUNCIO,
+  LISTADO_FAVORITOS,
+  DATOS_PERSONALES,
+} from "../../types";
 
 export default (state, action) => {
+  switch (action.type) {
+    case FORMULARIO_ANUNCIO:
+      return {
+        ...state,
+        formulario: true,
+      };
+    case LISTADO_FAVORITOS:
+      return {
+        ...state,
+        formularioFav: true,
+      };
+    case DATOS_PERSONALES:
+      return {
+        ...state,
+        formularioDatPers: true,
+      };
 
-    switch(action.type) {
-        case FORMULARIO_ANUNCIO:
-            return {
-                ...state,
-                formulario: true
-            }
-        case LISTADO_FAVORITOS:
-            return {
-                ...state,
-                formularioFav: true
-            }
-        default:
-            return state;
-            
-    }
-}
+    default:
+      return state;
+  }
+};

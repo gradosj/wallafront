@@ -4,6 +4,7 @@ import Barra from '../layouts/Barra';
 import NuevoAnuncioB from '../anuncios/NuevoAnuncioB';
 import ListadoAnuncios from '../anuncios/ListadoAnuncios';
 import ListadoFavoritos from '../anuncios/ListadoFavoritos';
+import DatosPersonales from '../anuncios/DatosPersonales';
 
 const Anuncios = () => {
         return (
@@ -21,6 +22,7 @@ const Anuncios = () => {
 
                         </div>
                         <ListadoFavoritos></ListadoFavoritos>
+                        <DatosPersonales></DatosPersonales>
                         
                     </main>
                 </div>
