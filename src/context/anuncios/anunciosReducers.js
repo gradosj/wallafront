@@ -1,4 +1,4 @@
-import {FORMULARIO_ANUNCIO} from '../../types';
+import {FORMULARIO_ANUNCIO, LISTADO_FAVORITOS} from '../../types';
 
 export default (state, action) => {
 
@@ -7,6 +7,11 @@ export default (state, action) => {
             return {
                 ...state,
                 formulario: true
+            }
+        case LISTADO_FAVORITOS:
+            return {
+                ...state,
+                formularioFav: true
             }
         default:
             return state;
