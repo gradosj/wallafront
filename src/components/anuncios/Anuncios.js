@@ -3,6 +3,7 @@ import Sidebar from '../layouts/Sidebar';
 import Barra from '../layouts/Barra';
 import NuevoAnuncioB from '../anuncios/NuevoAnuncioB';
 import ListadoAnuncios from '../anuncios/ListadoAnuncios';
+import ListadoFavoritos from '../anuncios/ListadoFavoritos';
 
 const Anuncios = () => {
         return (
@@ -19,6 +20,8 @@ const Anuncios = () => {
                             <ListadoAnuncios/>
 
                         </div>
+                        <ListadoFavoritos></ListadoFavoritos>
+                        
                     </main>
                 </div>
             </div>

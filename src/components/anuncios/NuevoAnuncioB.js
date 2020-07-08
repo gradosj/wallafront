@@ -1,62 +1,98 @@
-import React from "react";
+import React, { Fragment, useState, useContext } from "react";
+import AnunciosContext from "../../context/anuncios/anunciosContext";
 
 const NuevoAnuncioB = () => {
-  return (
-    <div className="formulario">
-      <form action="">
-          <div className="formulario-nuevo-anuncio">
-              <input type="text"
-                    className="input-text"
-                    placeholder="nombre tarea"
-                    name="nombre"
-                />
-          </div>
-          
-          <div className="formulario-nuevo-anuncio">
-              <input type="text"
-                    className="input-text"
-                    placeholder="nombre tarea"
-                    name="nombre"
-                />
-          </div>
+    // Obtener el state del formulario
 
-          <div className="formulario-nuevo-anuncio">
-              <input type="text"
-                    className="input-text"
-                    placeholder="nombre tarea"
-                    name="nombre"
-                />
-          </div>
+    const anunciosContext = useContext(AnunciosContext);
+    const { formulario, mostrarFormulario } = anunciosContext;
 
-          <div className="formulario-nuevo-anuncio">
-              <input type="text"
-                    className="input-text"
-                    placeholder="nombre tarea"
-                    name="nombre"
-                />
-          </div>
+    //State para anuncios
+    const [anuncio, guardarAnuncio] = useState({
+        nombre: "",
+    });
 
-          <div className="formulario-nuevo-anuncio">
-              <input type="text"
-                    className="input-text"
-                    placeholder="nombre tarea"
-                    name="nombre"
-                />
-          </div>
+    //Extraer nombre de proyecto
+    const { nombre } = anuncio;
 
-          <div className="formulario-nuevo-anuncio">
-              <input type="submit"
-                    className="btn btn-primario btn-submit btn-block "
-                    placeholder="nombre tarea"
-                    value="Agregar Tarea"
-                />
-          </div>
+    const onChangeAnuncio = (e) => {
+        guardarAnuncio({
+            ...anuncio,
+            [e.target.name]: e.target.value,
+        });
+    };
 
-          
+    return (
 
-      </form>
-    </div>
-  );
+        // formulario principal de la zona privada
+        <Fragment>
+            {
+                formulario ?
+                    (
+                        <div className="formulario">
+                            <form action="">
+                                <div className="formulario-nuevo-anuncio">
+                                    <input
+                                        type="text"
+                                        className="input-text"
+                                        placeholder="nombre tarea"
+                                        name="nombre"
+                                    />
+                                </div>
+
+                                <div className="formulario-nuevo-anuncio">
+                                    <input
+                                        type="text"
+                                        className="input-text"
+                                        placeholder="nombre tarea"
+                                        name="nombre"
+                                    />
+                                </div>
+
+                                <div className="formulario-nuevo-anuncio">
+                                    <input
+                                        type="text"
+                                        className="input-text"
+                                        placeholder="nombre tarea"
+                                        name="nombre"
+                                    />
+                                </div>
+
+                                <div className="formulario-nuevo-anuncio">
+                                    <input
+                                        type="text"
+                                        className="input-text"
+                                        placeholder="nombre tarea"
+                                        name="nombre"
+                                    />
+                                </div>
+
+                                <div className="formulario-nuevo-anuncio">
+                                    <input
+                                        type="text"
+                                        className="input-text"
+                                        placeholder="nombre tarea"
+                                        name="nombre"
+                                    />
+                                </div>
+
+                                <div className="formulario-nuevo-anuncio">
+                                    <input
+                                        type="submit"
+                                        className="btn btn-primario btn-submit btn-block "
+                                        placeholder="nombre tarea"
+                                        value="Agregar Tarea"
+                                        onClick={() => mostrarFormulario()}
+                                        onChange={onChangeAnuncio}
+                                    />
+                                </div>
+                            </form>
+                        </div>
+                    ) : null
+            }
+
+        </Fragment>
+    );
 };
 
 export default NuevoAnuncioB;

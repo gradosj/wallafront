@@ -1,61 +1,75 @@
-import React, {Fragment, useState, useContext} from 'react';
-import AnunciosContext from '../../context/anuncios/anunciosContext';
+import React, { Fragment, useState, useContext } from "react";
+import AnunciosContext from "../../context/anuncios/anunciosContext";
 
 const NuevoAnuncion = () => {
+  // Obtener el state del formulario
 
-    // Obtener el state del formulario
+  const anunciosContext = useContext(AnunciosContext);
+  const {
+    formulario,
+    mostrarFormulario,
+    mostrarFavoritos,
+    datosPersonales,
+  } = anunciosContext;
 
-    const anunciosContext = useContext(AnunciosContext);
-    const {formulario, mostrarFormulario} = anunciosContext;
+  //State para anuncios
+  const [anuncio, guardarAnuncio] = useState({
+    nombre: "",
+  });
 
-    //State para anuncios
-    const [anuncio, guardarAnuncio] = useState({
-        nombre: ''
+  //Extraer nombre de proyecto
+  const { nombre } = anuncio;
+
+  const onChangeAnuncio = (e) => {
+    guardarAnuncio({
+      ...anuncio,
+      [e.target.name]: e.target.value,
     });
+  };
 
-    //Extraer nombre de proyecto
-    const {nombre} = anuncio;
+  return (
+    <Fragment>
+      <button
+        type="button"
+        className="btn btn-block btn-primario"
+        onClick={() => mostrarFormulario()}
+      >
+        {" "}
+        Nuevo Anuncio{" "}
+      </button>
 
-    const onChangeAnuncio = e => {
-        guardarAnuncio({
-            ...anuncio,
-            [e.target.name]: e.target.value
-        })
-    }
+      {formulario ? (
+        <form className="formulario-nuevo-anuncio">
+          <input
+            type="text"
+            className="input-text"
+            placeholder="Nombre Proyecto"
+            name="nombre"
+            value={nombre}
+            onChange={onChangeAnuncio}
+          />
+        </form>
+      ) : null}
 
+      <button
+        type="button"
+        className="btn btn-block btn-primario"
+        onClick={() => mostrarFavoritos()}
+      >
+        {" "}
+        Favoritos{" "}
+      </button>
 
-    return (
-        <Fragment>
-        <button
-            type="button"
-            className="btn btn-block btn-primario"
-            onClick={() => mostrarFormulario()}
-            > Nuevo Anuncio </button>
-
-            {
-                formulario  ? 
-                    (
-                        <form
-                        className="formulario-nuevo-anuncio">
-                            <input
-                                type="text"
-                                className="input-text"
-                                placeholder="Nombre Proyecto"
-                                name="nombre"
-                                value={nombre}
-                                onChange={onChangeAnuncio}
-                            />                            
-                
-                        </form>
-
-                    ) : null
-            }
-    
-       
-        </Fragment>
-
-    );
-
-}
+      <button
+        type="button"
+        className="btn btn-block btn-primario"
+        onClick={() => datosPersonales()}
+      >
+        {" "}
+        Datos Personales{" "}
+      </button>
+    </Fragment>
+  );
+};
 
 export default NuevoAnuncion;
