@@ -2,7 +2,7 @@ import React, { useReducer } from 'react';
 
 import anunciosContext from './anunciosContext';
 import anunciosReducer from './anunciosReducers';
-import {FORMULARIO_ANUNCIO, LISTADO_FAVORITOS, DATOS_PERSONALES} from '../../types';
+import {FORMULARIO_ANUNCIO, LISTADO_FAVORITOS, DATOS_PERSONALES, LISTADO_MIS_ANUNCIOS} from '../../types';
 
 
 const AnunciosState = props => {
@@ -10,6 +10,7 @@ const AnunciosState = props => {
             formulario : false,
             formularioFav: false,
             formularioDatPers: false,
+            formularioAnun: false,
 
     }
 
@@ -38,6 +39,12 @@ const AnunciosState = props => {
         })
     }
 
+    const mostrarMisAnuncios = () => {
+        dispatch({
+            type: LISTADO_MIS_ANUNCIOS
+        })
+    }
+
 
     return (
         <anunciosContext.Provider
@@ -45,9 +52,11 @@ const AnunciosState = props => {
                 formulario: state.formulario, // EL STATE LO MANTENEMOS DE ESTA FORMA
                 formularioFav: state.formularioFav,
                 formularioDatPers: state.formularioDatPers,
+                formularioAnun: state.formularioAnun,
                 mostrarFormulario, //asi mantenmos las funciones
                 listadoFavoritos,
-                mostrarDatPers
+                mostrarDatPers,
+                mostrarMisAnuncios
 
             }}>
             {props.children}

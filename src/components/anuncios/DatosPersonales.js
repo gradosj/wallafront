@@ -21,7 +21,7 @@ const DatosPersonales = () => {
     <Fragment>
       {formularioDatPers ? (
         <div>
-          <h2>Proyectos: Tienda virtual</h2>
+          <h2>Mis datos</h2>
 
           <ul className="listado-tarea">
             {datosPers.length === 0 ? (

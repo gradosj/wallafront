@@ -9,7 +9,8 @@ const NuevoAnuncion = () => {
     formulario,
     mostrarFormulario,
     listadoFavoritos,
-    mostrarDatPers,
+    mostrarMisAnuncios,
+    mostrarDatPers
   } = anunciosContext;
 
   //State para anuncios
@@ -50,6 +51,16 @@ const NuevoAnuncion = () => {
           />
         </form>
       ) : null}
+
+      
+      <button
+        type="button"
+        className="btn btn-block btn-primario"
+        onClick={() => mostrarMisAnuncios()}
+      >
+        {" "}
+        Mis Anuncios{" "}
+      </button>
 
       <button
         type="button"

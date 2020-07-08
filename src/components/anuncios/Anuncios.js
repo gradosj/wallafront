@@ -21,6 +21,7 @@ const Anuncios = () => {
                             <ListadoAnuncios/>
 
                         </div>
+                        <ListadoAnuncios/>
                         <ListadoFavoritos></ListadoFavoritos>
                         <DatosPersonales></DatosPersonales>
                         
