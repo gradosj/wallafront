@@ -38,8 +38,8 @@ export default (state, action) => {
         ...state,
         formulario: false,
         formularioFav: false,
-        formularioDatPers: true,
-        formularioAnun: false
+        formularioDatPers: false,
+        formularioAnun: true
       };
 
     default:
