@@ -1,12 +1,12 @@
 import React from 'react';
 import Sidebar from '../layouts/Sidebar';
 import Barra from '../layouts/Barra';
-import NuevoAnuncioB from '../anuncios/NuevoAnuncioB';
-import ListadoAnuncios from '../anuncios/ListadoAnuncios';
-import ListadoFavoritos from '../anuncios/ListadoFavoritos';
-import DatosPersonales from '../anuncios/DatosPersonales';
+import NuevoAnuncioB from './NuevoAnuncioB';
+import ListadoAnuncios from './ListadoAnuncios';
+import ListadoFavoritos from './ListadoFavoritos';
+import DatosPersonales from './DatosPersonales';
 
-const Anuncios = () => {
+const Privado = () => {
         return (
             <div className="contenedor-app">
                 <Sidebar>
@@ -31,5 +31,5 @@ const Anuncios = () => {
         );
 }
 
-export default Anuncios;
+export default Privado;
 

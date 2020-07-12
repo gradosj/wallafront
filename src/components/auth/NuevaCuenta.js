@@ -82,7 +82,7 @@ const NuevaCuenta = () => {
                     <div className="campo-form"></div>
                         <input type="submit" className="btn btn-primario btn-block" value="Iniciar Sesion"/>
                 </forms>
-                <Link to={'/'} className="enlace-cuenta">
+                <Link to={'/login'} className="enlace-cuenta">
                     Ir a LogIn
                 </Link>
             </div>
