@@ -1,23 +1,33 @@
-import React, { Fragment, useState, useContext } from "react";
+import React, { Fragment, useEffect, useContext } from "react";
 import MisAnuncios from "./MisAnuncios";
 import AnunciosContext from "../../context/anuncios/anunciosContext";
+import AnunciosPRContext from "../../context/anunciosPR/anunciosPRContext";
+import { OBTENER_PROYECTOS } from "../../types";
 
 const ListadoAnuncios = () => {
   // Obtener el state del formulario
 
+  //extraemos del state inicial y revisamos si tiene contenido
   const anunciosContext = useContext(AnunciosContext);
-  const { formularioAnun, mostrarMisAnuncios } = anunciosContext;
+  const { formularioAnun } = anunciosContext;
 
-  //State para anuncios
-  const [anuncio, guardarAnuncio] = useState({
-    nombre: "",
-  });
+  //obtenemos los anuncios del usuario
+  const anunciosPRContext = useContext(AnunciosPRContext);
+    const {anuncios} = anunciosPRContext;
 
-  const anuncios = [
-    { nombre: "Nombre anuncio", estado: true },
-    { nombre: "Nombre anuncio1", estado: false },
-    { nombre: "Nombre anuncio2", estado: true },
-  ];
+ // MOSTRAR ERROR DE VALIDACION DE FORMULARIO --> 206
+// nunca puede haber un return antes del useEffect REPASAR CLASE 205
+
+  //  useEffect(() => {
+    //obtenerProyectos(); Esta funcion deberia extraerse tambien del context
+
+  //}, []);
+    // if (proyectos.length === 0) return null; 
+
+
+  
+
+
   return (
     <Fragment>
       {formularioAnun ? (

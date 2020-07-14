@@ -8,10 +8,12 @@ import AdsComp from './components/publicADS/addlist';
 import DetailComponent from './components/publicADS/detail';
 
 import AnunciosState from "./context/anuncios/anunciosState";
+import AnunciosPRState from "./context/anunciosPR/anunciosPRState";
 
 function App() {
   return (
     <AnunciosState>
+      <AnunciosPRState>
       <Router>
         <Switch>
           <Route exact path="/ads" component={AdsComp} /> 
@@ -21,6 +23,7 @@ function App() {
           <Route exact path="/privado" component={Privado} />
         </Switch>
       </Router>
+      </AnunciosPRState>
     </AnunciosState>
   );
 }

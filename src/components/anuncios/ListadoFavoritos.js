@@ -24,7 +24,7 @@ const ListadoFavoritos = () => {
     };
 
     const anuncios = [
-        { nombre: "Nombre anuncio", descripcion: "Anuncio 1", estado: true },
+        { nombre: "Nombre anuncio", descripcion: "Anuncio 5", estado: true },
         { nombre: "Nombre anuncio1", descripcion: "Anuncio 2", estado: false },
         { nombre: "Nombre anuncio2", descripcion: "Anuncio 3", estado: true },
     ];

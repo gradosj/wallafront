@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react';
+import AnunciosPRContext from '../../context/anunciosPR/anunciosPRContext';
+
 
 
 /* Desde tareas  TAREA*/ 
@@ -6,6 +8,12 @@ import React from 'react'
 const MisAnuncios = ({misAnuncios}) => {
     console.log('desde Mis anuncios');
     console.log(misAnuncios);
+
+    //obtener funcion de context de tarea
+
+    const anunciosPRContext = useContext(AnunciosPRContext);
+    const {mostrarMisAnuncios} = anunciosPRContext;
+
     return (
     <li className="tarea sombra">
         

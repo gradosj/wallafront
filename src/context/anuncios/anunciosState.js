@@ -2,8 +2,15 @@ import React, { useReducer } from 'react';
 
 import anunciosContext from './anunciosContext';
 import anunciosReducer from './anunciosReducers';
-import {FORMULARIO_ANUNCIO, LISTADO_FAVORITOS, DATOS_PERSONALES, LISTADO_MIS_ANUNCIOS} from '../../types';
+import {FORMULARIO_ANUNCIO, LISTADO_FAVORITOS, DATOS_PERSONALES, LISTADO_MIS_ANUNCIOS, OBTENER_PROYECTOS} from '../../types';
 
+
+const proyectos = [
+    {id: 1, nombre: 'Proyecto de prueba'},
+    {id: 2, nombre: 'Proyecto de prueba 2'},
+    {id: 3, nombre: 'Proyecto de prueba 3'}
+
+];
 
 const AnunciosState = props => {
     const initialState = {
@@ -45,6 +52,16 @@ const AnunciosState = props => {
         })
     }
 
+    //OBTENER LOS PROYECTOS (DEPENDE DIRECTAMENTE de la constante de arriba Proyectos 
+
+    const obtenerProyectos = proyectos => { //siempre lo que tome la funcion como parametro es lo que va a ser el payload
+        dispatch({
+            type: OBTENER_PROYECTOS,
+            payload: proyectos
+        })
+
+    }
+
 
     return (
         <anunciosContext.Provider
@@ -56,7 +73,8 @@ const AnunciosState = props => {
                 mostrarFormulario, //asi mantenmos las funciones
                 listadoFavoritos,
                 mostrarDatPers,
-                mostrarMisAnuncios
+                mostrarMisAnuncios,
+                obtenerProyectos
 
             }}>
             {props.children}

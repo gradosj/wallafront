@@ -2,7 +2,8 @@ import {
   FORMULARIO_ANUNCIO,
   LISTADO_FAVORITOS,
   DATOS_PERSONALES,
-  LISTADO_MIS_ANUNCIOS
+  LISTADO_MIS_ANUNCIOS,
+  OBTENER_PROYECTOS,
 } from "../../types";
 
 export default (state, action) => {
@@ -41,6 +42,11 @@ export default (state, action) => {
         formularioDatPers: false,
         formularioAnun: true
       };
+      case OBTENER_PROYECTOS:
+        return {
+          ...state,
+          proyectos: action.payload
+        }
 
     default:
       return state;
