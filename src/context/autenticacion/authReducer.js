@@ -1,18 +1,21 @@
 import {
-    MOSTRAR_MIS_ANUNCIOS
+    REGISTRO_EXITOSO,
+    REGISTRO_ERROR,
+    OBTENER_USUARIO,
+    LOGIN_EXITOSO,
+    LOGIN_ERROR,
+    CERRAR_SESION
 } from '../../types';
 
 
 export default (state,action) => {
-    switch(action.type) {
-        case MOSTRAR_MIS_ANUNCIOS:
-        return {
-            ...state,
-            muestramisanuncios: state.muestramisanuncios.filter(anuncio => anuncio.anuncioId === action.payload)
+ /*   switch(action.type) {
+        {
+           
 
         }
 
         default:
             return state;
-    }
+    }*/
 }
