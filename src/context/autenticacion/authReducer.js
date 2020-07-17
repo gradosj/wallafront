@@ -1,4 +1,4 @@
-import {
+import { 
     REGISTRO_EXITOSO,
     REGISTRO_ERROR,
     OBTENER_USUARIO,
@@ -7,27 +7,36 @@ import {
     CERRAR_SESION
 } from '../../types';
 
-
-export default (state,action) => {
+export default (state, action) => {
     switch(action.type) {
         case REGISTRO_EXITOSO:
-            // NOS DEVUELVE EL TOKEN
+        case LOGIN_EXITOSO:
             localStorage.setItem('token', action.payload.token);
-
             return {
                 ...state,
                 autenticado: true,
-                mensaje: null
+                mensaje: null,
+                cargando: false
             }
-
-
+        case OBTENER_USUARIO: 
+            return {
+                ...state,
+                autenticado: true,
+                usuario: action.payload, 
+                cargando: false
+            }
+        case CERRAR_SESION:
+        case LOGIN_ERROR:
         case REGISTRO_ERROR:
+            localStorage.removeItem('token');
             return {
                 ...state,
                 token: null,
-                mensaje: action.payload
+                usuario: null,
+                autenticado: null,
+                mensaje: action.payload, 
+                cargando: false
             }
-
         
         default:
             return state;
