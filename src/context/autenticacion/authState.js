@@ -27,7 +27,14 @@ const AuthState = props => {
 
     const registrarUsuario = async datos => {
         try {
-            const respuesta = await clienteAxios.post('/api/')
+            const respuesta = await clienteAxios.post('/api/usuarios');
+            console.log('aaaaaasdasdasdasdfasdasdasdasdasdad');
+            console.log(respuesta);
+
+            dispatch({
+                type: REGISTRO_EXITOSO,
+                payload: respuesta.data
+            })
 
         } catch (error) {
             console.log(error);
@@ -43,7 +50,8 @@ const AuthState = props => {
             token: state.token,
             autenticado: state.autenticado,
             usuario: state.usuario,
-            mensaje: state.mensaje
+            mensaje: state.mensaje,
+            registrarUsuario
 
         }}>{props.children}
 

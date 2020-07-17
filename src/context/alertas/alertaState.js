@@ -8,7 +8,7 @@ import {MOSTRAR_ALERTA, OCULTAR_ALERTA} from './../../types';
 
 const AlertaState = props => {
     const initialState = {
-        alerta: null,
+        alerta: null
         
     }
 
@@ -34,7 +34,7 @@ const AlertaState = props => {
 
     }
     
-
+console.log(alertaContext.Provider.value);
     
     return (
         <alertaContext.Provider
@@ -42,11 +42,14 @@ const AlertaState = props => {
                 alerta: state.alerta,
                 mostrarAlerta
 
-            }}>
+            }}
+            >
             {props.children}
 
         </alertaContext.Provider>
     )
+
+    
 }
 
 export default AlertaState;

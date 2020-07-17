@@ -9,13 +9,27 @@ import {
 
 
 export default (state,action) => {
- /*   switch(action.type) {
-        {
-           
+    switch(action.type) {
+        case REGISTRO_EXITOSO:
+            // NOS DEVUELVE EL TOKEN
+            localStorage.setItem('token', action.payload.token);
 
-        }
+            return {
+                ...state,
+                autenticado: true,
+                mensaje: null
+            }
 
+
+        case REGISTRO_ERROR:
+            return {
+                ...state,
+                token: null,
+                mensaje: action.payload
+            }
+
+        
         default:
             return state;
-    }*/
+    }
 }
