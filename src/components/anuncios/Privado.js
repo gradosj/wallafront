@@ -7,6 +7,7 @@ import ListadoFavoritos from './ListadoFavoritos';
 import DatosPersonales from './DatosPersonales';
 import AuthContext from '../../context/autenticacion/authContext';
 
+
 const Privado = () => {
 
     //extraer la informacion de autenticación
