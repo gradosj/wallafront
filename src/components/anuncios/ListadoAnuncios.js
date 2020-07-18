@@ -32,7 +32,7 @@ const ListadoAnuncios = () => {
     <Fragment>
       {formularioAnun ? (
         <div>
-          <h2>Proyectos: Tienda virtual</h2>
+          <h2>Mis anuncios</h2>
 
           <ul className="listado-tarea">
             {anuncios.length === 0 ? (
