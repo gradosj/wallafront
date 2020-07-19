@@ -12,16 +12,9 @@ import clienteAxios from "./../../config/axios";
 
 const AnuncioPRState = (props) => {
   const initialState = {
-    anuncios: [
-      { nombre: "Desde el front",
-        venta: true,
-        precio: 5,
-        foto: "foto.jpg",
-        descripcion: "descripcion",
-        tags : ['tag']}],
-    
-     
-    muestramisanuncios: null
+    anuncio: [
+      ],     
+    muestraformanuncio: null
 
   }
 
@@ -63,7 +56,7 @@ const AnuncioPRState = (props) => {
   return (
     <AnunciosPRContext.Provider
       value={{
-        anuncios: state.anuncios,
+        anuncios: state.anuncio,
         muestramisanuncios: state.muestramisanuncios,
         mostrarMisAnuncios
       }}>

@@ -2,7 +2,9 @@ import React, { useReducer } from 'react';
 
 import anunciosContext from './anunciosContext';
 import anunciosReducer from './anunciosReducers';
+import clienteAxios from '../../config/axios';
 import {FORMULARIO_ANUNCIO,
+         AGREGAR_ANUNCIO,
          LISTADO_FAVORITOS, 
          DATOS_PERSONALES, 
          LISTADO_MIS_ANUNCIOS,
@@ -61,6 +63,22 @@ const AnunciosState = props => {
     }
 
 
+     // Agregar una tarea al proyecto seleccionado
+     const agregarAnuncio = async anuncio => {
+        console.log(anuncio);
+        try {
+            const resultado = await clienteAxios.post('/api/anuncios/post', anuncio);
+            console.log(resultado);
+            dispatch({
+                type: AGREGAR_ANUNCIO,
+                payload: anuncio
+            })
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+
     return (
         <anunciosContext.Provider
             value={{
@@ -70,6 +88,7 @@ const AnunciosState = props => {
                 formularioAnun: state.formularioAnun,
                 mostrarFormulario, //asi mantenmos las funciones
                 listadoFavoritos,
+                agregarAnuncio,
                 mostrarDatPers,
                 mostrarMisAnuncios,
                 obtenerProyectos

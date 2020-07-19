@@ -46,11 +46,7 @@ const NuevoAnuncioB = () => {
     });
   };
 
-  // Mostrar el formulario
-  const onClickFormulario = () => {
-    mostrarFormulario();
-  };
-
+  
   return (
     // formulario principal de la zona privada
     /* {<Fragment>
@@ -145,8 +141,6 @@ const NuevoAnuncioB = () => {
               </select>
             
 
-           
-
               <input
                 type="number"
                 className="input-text"
@@ -188,7 +182,6 @@ const NuevoAnuncioB = () => {
               </select>
             
 
-           
               <input
                 type="submit"
                 className="btn btn-primario btn-submit btn-block "
