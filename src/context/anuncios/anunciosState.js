@@ -2,15 +2,13 @@ import React, { useReducer } from 'react';
 
 import anunciosContext from './anunciosContext';
 import anunciosReducer from './anunciosReducers';
-import {FORMULARIO_ANUNCIO, LISTADO_FAVORITOS, DATOS_PERSONALES, LISTADO_MIS_ANUNCIOS, OBTENER_PROYECTOS} from '../../types';
+import {FORMULARIO_ANUNCIO,
+         LISTADO_FAVORITOS, 
+         DATOS_PERSONALES, 
+         LISTADO_MIS_ANUNCIOS,
+         OBTENER_PROYECTOS,}
+from '../../types';
 
-
-const proyectos = [
-    {id: 1, nombre: 'Proyecto de prueba'},
-    {id: 2, nombre: 'Proyecto de prueba 2'},
-    {id: 3, nombre: 'Proyecto de prueba 3'}
-
-];
 
 const AnunciosState = props => {
     const initialState = {
