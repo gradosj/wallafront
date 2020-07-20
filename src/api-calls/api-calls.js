@@ -49,8 +49,8 @@ async function addCall(query) {
     console.log('info-addCall');
     return axios({
         method: 'GET',
-      //  url: `http://34.89.93.186:8080/apiv1/anuncios${query}`,
-      url: `http://localhost:3000/api/anuncios?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWY1ZDkxNjc5NzA2YzFiNGZlZDIyNzAiLCJpYXQiOjE1OTQ1NTAwMjMsImV4cCI6MTU5NDcyMjgyM30.RrwWkkqd_Yb2ob8WydkYI2BjQlyimsqAipAsrA1Iixc${query}`,
+     
+      url: `http://localhost:3000/api/anuncios${query}`,
       
     })
         .then(function (response) {
@@ -66,13 +66,14 @@ async function detailCall(id) {
     console.log('info-detailCall');
     return axios({
         method: 'GET',
-        url: `http://34.89.93.186:8080/apiv1/anuncios/${id}`,
-        withCredentials: true,
+        url: `http://localhost:3000/api/anuncios/${id}`,
+       
     })
         .then(function (response) {
             return response.data;
         })
         .catch(function (error) {
+            console.log(error.response);
             return error.response.data;
         })
 }

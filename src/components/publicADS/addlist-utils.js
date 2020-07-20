@@ -6,13 +6,14 @@ const cardStyle = {
 };
 class AddMount extends Component {
   render() {
+    
     return (
       <>
         <div className="card card-apoyo m-2 bg-secondary" style={cardStyle}>
-          <img className="card-img-top" src={this.props.data.photo} alt={this.props.data.name} />
+          <img className="card-img-top" src={`http://localhost:3000/images/uploads/${this.props.data.foto}`} alt={this.props.data.nombre} />
           <div className="card-body">
-            <h2 className="card-title">{this.props.data.name}</h2>
-            <p className="card-text">Precio: {this.props.data.price}</p>
+            <h2 className="card-title">{this.props.data.nombre}</h2>
+            <p className="card-text">Precio: {this.props.data.precio}</p>
             <Link to={`/ads/${this.props.data._id}`}><p className="btn btn-info">Detalle</p></Link>
           </div>
         </div>
@@ -31,8 +32,10 @@ function RenderOrNot(props) {
   const callDo = props.callDo;
   let toShow = [];
   if (callDo) {
-    for (let i = 0; i < props.data.count; i++) {
-      toShow.push(<AddMount key={i} data={props.data.results[i]} />);
+    console.log('desde add-utils joselito: ', props.data.length);
+    console.log(props.data);
+    for (let i = 0; i < props.data.length; i++) {
+      toShow.push(<AddMount key={i} data={props.data[i]} />);
     }
     return (
       <div className="mx-auto anuncios d-flex flex-wrap justify-content-around mt-0 bg-dark">
@@ -44,9 +47,11 @@ function RenderOrNot(props) {
 }
 
 function createQueryString(name, sellOrBuy, tags, priceMin, priceMax) {
+
+  console.log('entra por querystring');
   let queryString = '';
   if (name !== '') {
-    queryString = '?name=' + name;
+    queryString = '?nombre=' + name;
   }
   if (sellOrBuy !== '') {
     if (sellOrBuy === 'sell') {
@@ -68,30 +73,31 @@ function createQueryString(name, sellOrBuy, tags, priceMin, priceMax) {
   }
   if (tags !== '') {
     if (queryString === '') {
-      queryString = '?tag=' + tags;
+      queryString = '?tags=' + tags;
     }
     else {
-      queryString = queryString + '&tag=' + tags;
+      queryString = queryString + '&tags=' + tags;
     }
   }
   if (priceMin !== '' || priceMax !== '') {
     if (queryString === '') {
       if (priceMin < priceMax) {
-        queryString = '?price=' + priceMin + '-' + priceMax;
+        queryString = '?precio=' + priceMin + '-' + priceMax;
       }
       else {
-        queryString = '?price=' + priceMax + '-' + priceMin;
+        queryString = '?precio=' + priceMax + '-' + priceMin;
       }
     }
     else {
       if (priceMin < priceMax) {
-        queryString = queryString + '&price=' + priceMin + '-' + priceMax;
+        queryString = queryString + '&precio=' + priceMin + '-' + priceMax;
       }
       else {
-        queryString = queryString + '&price=' + priceMax + '-' + priceMin;
+        queryString = queryString + '&precio=' + priceMax + '-' + priceMin;
       }
     }
   }
+  console.log('desde addlist-utils --> ', queryString);
   return queryString;
 }
 export { RenderOrNot, createQueryString };

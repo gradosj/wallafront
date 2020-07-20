@@ -53,6 +53,7 @@ export default class CreateAd extends Component {
   }
   render() {
     const { formName, formTags, formSellOrBuy, formPriceMin, formTextAreaDescription, formUrl } = this.state;
+    console.log('Desde create-add : ', formName, formTags);
     return (
       <div className="createadd bg-dark">
         <h1 className="text-white m-2">Crea tu anuncio:</h1>

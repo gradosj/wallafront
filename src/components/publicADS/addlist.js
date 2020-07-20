@@ -20,7 +20,7 @@ export default class AdsList extends Component {
 
   
   evaluator = () => {
-    console.log(this.state.responseState.length);
+    console.log("addlist --> Desde evaluator" , this.state.responseState.length);
     /*
     if (this.state.responseState.success === false) {
       this.setState({ importantInfo: "Ha ocurrido un error, te redirigimos al login para que puedas volver a iniciar sesión e intentarlo de nuevo." });
@@ -32,8 +32,8 @@ export default class AdsList extends Component {
     else {
       this.setState({ importantInfo: "Ha ocurrido un error, te redirigimos al login para que puedas volver a iniciar sesión e intentarlo de nuevo." });
       //setTimeout(function () { window.location.pathname = 'login'; }, 3000);
-    }*/
-
+    }
+*/
 
     if (this.state.responseState.length === 0) {
       this.setState({ importantInfo: "No hay resultados" });
@@ -74,29 +74,32 @@ export default class AdsList extends Component {
   render() {
     const { formName, formTags, formPriceMin, formPriceMax, formSellOrBuy } = this.state;
     console.log('nuevo-put');
-    console.log(this.state);
+    console.log(this.state.formName);
+    console.log(this.state.responseState);
+    console.log(this.state.childrenToRender);
    
   
     return (
+      
       <>
         <form className="bg-dark" onSubmit={this.onSubmitController}>
-          <h2 className="m-2 text-white">Filtros:</h2>
+          <h2 className="m-2 text-white">Busqueda:</h2>
           <div className="form-group d-flex">
             <input className="form-control m-2" type="text" id="name" placeholder="Nombre" value={formName} onChange={this.nameController}></input>
             <select className="form-control m-2" id="compra-venta" value={formSellOrBuy} onChange={this.sellController}>
               <option value="buy">Compra</option>
               <option value="sell">Venta</option>
-              <option value="">Compra y venta</option>
+              <option value="">Comprar o Vender</option>
             </select>
             <select className="form-control m-2" id="tags" value={formTags} onChange={this.tagController}>
               <option value="lifestyle">Lifestyle</option>
               <option value="mobile">Mobile</option>
               <option value="motor">Motor</option>
               <option value="work">Work</option>
-              <option value="">Ninguno</option>
+              <option value="">Tags</option>
             </select>
           </div>
-          <h2 className="m-2 text-white">Precio:</h2>
+          
           <div className="form-group d-flex">
             <input className="form-control m-2" type="number" placeholder="Minimo" value={formPriceMin} onChange={this.priceMinController}></input>
             <input className="form-control m-2" type="number" placeholder="Maximo" value={formPriceMax} onChange={this.priceMaxController}></input>

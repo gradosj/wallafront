@@ -4,6 +4,7 @@ import AnunciosContext from "../../context/anuncios/anunciosContext";
 import AnunciosPRContext from "../../context/anunciosPR/anunciosPRContext";
 import { OBTENER_PROYECTOS } from "../../types";
 
+
 const ListadoAnuncios = () => {
   // Obtener el state del formulario
 
@@ -25,14 +26,17 @@ const ListadoAnuncios = () => {
     // if (proyectos.length === 0) return null; 
 
 
-  
-
 
   return (
     <Fragment>
       {formularioAnun ? (
         <div>
-          <h2>Mis anuncios</h2>
+          <h2>Listado anuncios
+
+          </h2>
+          <button type="button" className="btn btn-eliminar">
+            Ver
+          </button>
 
           <ul className="listado-tarea">
             {anuncios.length === 0 ? (
@@ -43,9 +47,7 @@ const ListadoAnuncios = () => {
               anuncios.map((anuncios) => <MisAnuncios misAnuncios={anuncios} />)
             )}
           </ul>
-          <button type="button" className="btn btn-eliminar">
-            Eliminar proyecto
-          </button>
+          
         </div>
       ) : null}
     </Fragment>

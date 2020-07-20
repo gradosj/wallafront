@@ -6,9 +6,10 @@ import {
 export default (state,action) => {
     switch(action.type) {
         case MOSTRAR_MIS_ANUNCIOS:
+            console.log(action.payload);
         return {
             ...state,
-            muestramisanuncios: state.muestramisanuncios.filter(anuncio => anuncio.anuncioId === action.payload)
+            anuncios: action.payload
 
         }
 

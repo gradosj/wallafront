@@ -1,16 +1,58 @@
 import React, { Fragment, useState, useContext } from "react";
 import AnunciosContext from "../../context/anuncios/anunciosContext";
+import styled from "@emotion/styled";
+
+const Campo = styled.div`
+  display: flex;
+  margin-bottom: 1rem;
+  align-items: center;
+`;
+const Label = styled.label`
+  flex: 0 0 100px;
+`;
+const Select = styled.select`
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #e1e1e1;
+  -webkit-appearance: none;
+`;
+const InputRadio = styled.input`
+  margin: 0 1rem;
+`;
+
+const Boton = styled.button`
+  background-color: #00838f;
+  font-size: 16px;
+  width: 100%;
+  padding: 1rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: none;
+  transition: background-color 0.3s ease;
+  margin-top: 2rem;
+  &:hover {
+    background-color: #26c6da;
+    cursor: pointer;
+  }
+`;
 
 const NuevoAnuncioB = () => {
   // Obtener el state del formulario
 
   const anunciosContext = useContext(AnunciosContext);
-  const { formulario, mostrarFormulario, mostrarError, agregarAnuncio } = anunciosContext;
+  const {
+    formulario,
+    mostrarFormulario,
+    mostrarError,
+    agregarAnuncio,
+  } = anunciosContext;
 
   //State para anuncios
   const [anuncio, guardarAnuncio] = useState({
     nombre: "",
-    venta: true,
+    venta: "",
     precio: 0,
     foto: "",
     descripcion: "",
@@ -21,6 +63,7 @@ const NuevoAnuncioB = () => {
   const { nombre, venta, precio, foto, descripcion, tags } = anuncio;
 
   const onChangeAnuncio = (e) => {
+    console.log(e.target.value);
     guardarAnuncio({
       ...anuncio,
       [e.target.name]: e.target.value,
@@ -46,7 +89,6 @@ const NuevoAnuncioB = () => {
     });
   };
 
-  
   return (
     // formulario principal de la zona privada
     /* {<Fragment>
@@ -121,78 +163,87 @@ const NuevoAnuncioB = () => {
 
     <Fragment>
       {formulario ? (
-      
-          <form onSubmit={onSubmitAnuncio}>
-            
-              <input
-                type="text"
-                className="input-text"
-                placeholder="Titulo Anuncio"
-                name="nombre"
-                value={nombre}
-                onChange={onChangeAnuncio}
-              />
-            
+        <form onSubmit={onSubmitAnuncio}>
+          <input
+            type="text"
+            className="input-text"
+            placeholder="Titulo Anuncio"
+            name="nombre"
+            value={nombre}
+            onChange={onChangeAnuncio}
+          />
 
-           
-              <select className="" value={venta} onChange={onChangeAnuncio}>
-                <option value="sell">Venta</option>
-                <option value="buy">Compra</option>
-              </select>
-            
+          <Campo>
+            <Label>Anuncio de ...</Label>
+            <InputRadio
+              type="radio"
+              name="venta"
+              value="true"
+              checked={venta === "true"}
+              onChange={onChangeAnuncio}
+            />{" "}
+            Venta
+            <InputRadio
+              type="radio"
+              name="venta"
+              value="false"
+              checked={venta === "false"}
+              onChange={onChangeAnuncio}
+            />{" "}
+            Compra
+          </Campo>
 
-              <input
-                type="number"
-                className="input-text"
-                placeholder="Precio"
-                name="precio"
-                value={precio}
-                onChange={onChangeAnuncio}
-              />
-            
+          <input
+            type="number"
+            className="input-text"
+            placeholder="Precio"
+            name="precio"
+            value={precio}
+            onChange={onChangeAnuncio}
+          />
 
-           
-              <input
-                type="file"
-                className="input-text"
-                placeholder="fichero"
-                name="fichero"
-                value={foto}
-                onChange={onChangeAnuncio}
-              />
-            
+          <input
+            type="file"
+            className="input-text"
+            placeholder="foto"
+            name="foto"
+            value={foto}
+            onChange={onChangeAnuncio}
+          />
 
-           
-              <input
-                type="text"
-                className="input-text"
-                placeholder="Descripcion"
-                name="descripcion"
-                value={descripcion}
-                onChange={onChangeAnuncio}
-              />
-           
+          <input
+            type="text"
+            className="input-text"
+            placeholder="Descripcion"
+            name="descripcion"
+            value={descripcion}
+            onChange={onChangeAnuncio}
+          />
 
-            
-              <select id="tags" value={tags} onChange={onChangeAnuncio}>
-                <option value="lifestyle">Lifestyle</option>
-                <option value="mobile">Mobile</option>
-                <option value="motor">Motor</option>
-                <option value="work">Work</option>
-              </select>
-            
+                  <Campo>
+                <Label>Tag</Label>
+                <Select
+                    name="tags"
+                    value={tags}
+                    onChange={onChangeAnuncio}
+                >
+                    <option value="">-- Seleccione --</option>
+                    <option value="Lifestyle">Lifestyle</option>
+                    <option value="Mobile">Mobile</option>
+                    <option value="Motor">Motor</option>
+                    <option value="Work">Work</option>
+                </Select>
+            </Campo>
 
-              <input
-                type="submit"
-                className="btn btn-primario btn-submit btn-block "
-                placeholder="nombre tarea"
-                value="Agregar Tarea"
-                onClick={() => mostrarFormulario()}
-                onChange={onChangeAnuncio}
-              />
-            
-          </form>
-       
+          <input
+            type="submit"
+            className="btn btn-primario btn-submit btn-block "
+            placeholder="nombre tarea"
+            value="Agregar Tarea"
+            onClick={() => mostrarFormulario()}
+            onChange={onChangeAnuncio}
+          />
+        </form>
       ) : null}
     </Fragment>
   );

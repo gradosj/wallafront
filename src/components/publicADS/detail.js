@@ -10,8 +10,8 @@ export default class DetailComponent extends Component {
         }
     }
     evaluator = () => {
-        console.log(this.state.responseState);
-        if (this.state.responseState.success) {
+        console.log('aquiiiiiiiiiiiiiiiiiiiiiiiiii', this.state.responseState);
+        if (this.state.responseState.result) {
             this.setState({ whatWeRender: <DetailIsOk data={this.state.responseState.result} /> });
         }
         else {
@@ -54,17 +54,23 @@ class DetailIsOk extends Component {
         console.log(this.props.propId);
     }
     render() {
+        console.log('esto es------> ', this.props.data)
+        console.log(this.props.data.descripcion);
+        console.log(this.props.data.venta);
+      
+
         return (
             <>
-                <h1 className="text-white m-auto">{this.props.data.name}</h1>
-                <img className="text-white m-auto" src={this.props.data.photo} alt={this.props.data.name} />
+                <h1 className="text-white m-auto">{this.props.data.nombre}</h1>
+                <img className="text-white m-auto" src={`http://localhost:3000/images/uploads/${this.props.data.foto}`} alt={this.props.data.foto} />
                 <h2 className="text-white m-2">Descripción y precio:</h2>
-                <p className="text-white m-2">{this.props.data.description}</p>
-                <p className="text-white m-2">{this.props.data.price} €</p>
+                <p className="text-white m-2">{this.props.data.descripcion}</p>
+                <p className="text-white m-2">{this.props.data.precio} €</p>
                 <h5 className="text-white m-2">¿Compra o venta?</h5>
-                <p className="text-white m-2">{this.props.data.type}</p>
+                
+                <p className="text-white m-2">{this.props.data.venta ? 'Venta' : 'Compra' }</p>
                 <form className="m-2" onSubmit={this.onSubmitController}>
-                    <input className="form-control bg-secondary text-white" type="submit" value="Modificar este anuncio"></input>
+                    
                 </form>
                 {this.state.whatWeRender}
             </>
@@ -146,7 +152,7 @@ class ModifyAd extends Component {
         const { formName, formTags, formSellOrBuy, formPriceMin, formTextAreaDescription, formUrl } = this.state;
         return (
             <div className="modifyadd">
-                <h1 className="text-white m-2">Modifica este anuncio:</h1>
+             
                 <form className="m-2" onSubmit={this.onSubmitController}>
                     <div className="flexwrap d-flex flex-wrap justify-content-between">
                         <div className="form-group m-2 flex-fill">
@@ -174,8 +180,8 @@ class ModifyAd extends Component {
                             <p className="mt-1 text-white">Descripcion del anuncio:</p>
                             <textarea className="form-control mt-1" required value={formTextAreaDescription} placeholder="Descripción" onChange={this.textAreaController}></textarea>
                         </div>
-                    </div>
-                    <input className="btn btn-secondary form-control mt-2" type="submit" value="Modificar!"></input>
+                    </div>ƒmodi
+                    
                 </form>
                 <h1 className="text-info">{this.state.importantInfo}</h1>
             </div>

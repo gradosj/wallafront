@@ -1,18 +1,18 @@
 import React from 'react';
 
-import NuevoAnuncio from '../anuncios/NuevoAnuncio';
+import Menu from '../anuncios/Menu';
 
 
 const Sidebar = () => {
     return (
         <aside>
             <h1>MiZonaPrivada <span>Task</span></h1>
-            <NuevoAnuncio></NuevoAnuncio>
+            <Menu></Menu>
 
-            <div className="proyectos"></div>
-            <h2>Mis anuncios
+            
+           
                 
-            </h2>
+            
         </aside>
     )
 }

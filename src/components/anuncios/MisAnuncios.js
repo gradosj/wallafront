@@ -11,8 +11,7 @@ const MisAnuncios = ({misAnuncios}) => {
 
     //obtener funcion de context de tarea
 
-    const anunciosPRContext = useContext(AnunciosPRContext);
-    const {mostrarMisAnuncios} = anunciosPRContext;
+  
 
     return (
     <li className="tarea sombra">

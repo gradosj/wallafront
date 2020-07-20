@@ -25,11 +25,19 @@ const AnuncioPRState = (props) => {
 
 
   // Obtener las tareas de un proyecto
-  const mostrarMisAnuncios = anuncioId => {
-    dispatch({
-      type: MOSTRAR_MIS_ANUNCIOS,
-      payload: anuncioId
-    });
+  const mostrarMisAnuncios = async ()  => {
+    try {
+      
+      const resultado = await clienteAxios.get('/api/anunciospr')
+      dispatch({
+        type: MOSTRAR_MIS_ANUNCIOS,
+        payload: resultado.data.anuncios
+
+    })
+    
+    } catch (error) {
+      console.log(error);
+    }
   }
 
 
