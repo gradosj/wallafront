@@ -6,6 +6,7 @@ import {
 export default (state,action) => {
     switch(action.type) {
         case MOSTRAR_MIS_ANUNCIOS:
+            console.log('bonita');
             console.log(action.payload);
         return {
             ...state,

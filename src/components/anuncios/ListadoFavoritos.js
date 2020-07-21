@@ -24,15 +24,13 @@ const ListadoFavoritos = () => {
     };
 
     const anuncios = [
-        { nombre: "Nombre anuncio", descripcion: "Anuncio 5", estado: true },
-        { nombre: "Nombre anuncio1", descripcion: "Anuncio 2", estado: false },
-        { nombre: "Nombre anuncio2", descripcion: "Anuncio 3", estado: true },
+ 
     ];
     return (
         <Fragment>
             {formularioFav ? (
                 <div>
-                    <h1> Favoritos </h1>
+                    <h1> Favoritos  (en contrucción)</h1>
                     <ul className="listado-tarea">
                         {anuncios.length === 0 ? (
                             <li className="misAnuncios">
@@ -42,9 +40,7 @@ const ListadoFavoritos = () => {
                                 anuncios.map((anuncios) => <MisAnuncios misAnuncios={anuncios} />)
                             )}
                     </ul>
-                    <button type="button" className="btn btn-eliminar">
-                        Eliminar proyecto
-                    </button>
+                   
                 </div>
             ) : null
             }

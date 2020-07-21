@@ -2,10 +2,11 @@ import React, { Fragment, useEffect, useContext } from "react";
 import MisAnuncios from "./MisAnuncios";
 import AnunciosContext from "../../context/anuncios/anunciosContext";
 import AnunciosPRContext from "../../context/anunciosPR/anunciosPRContext";
-import { OBTENER_PROYECTOS } from "../../types";
+
 
 
 const ListadoAnuncios = () => {
+  console.log('listado anuncios');
   // Obtener el state del formulario
 
   //extraemos del state inicial y revisamos si tiene contenido
@@ -14,7 +15,7 @@ const ListadoAnuncios = () => {
 
   //obtenemos los anuncios del usuario
   const anunciosPRContext = useContext(AnunciosPRContext);
-    const {anuncios} = anunciosPRContext;
+    const {anunciospr, mostrarMisAnuncios} = anunciosPRContext;
 
  // MOSTRAR ERROR DE VALIDACION DE FORMULARIO --> 206
 // nunca puede haber un return antes del useEffect REPASAR CLASE 205
@@ -25,6 +26,10 @@ const ListadoAnuncios = () => {
   //}, []);
     // if (proyectos.length === 0) return null; 
 
+ 
+     // Obtener proyectos cuando carga el componente
+
+
 
 
   return (
@@ -34,17 +39,18 @@ const ListadoAnuncios = () => {
           <h2>Listado anuncios
 
           </h2>
-          <button type="button" className="btn btn-eliminar">
+          <button
+          onClick={() => mostrarMisAnuncios()} type="button" className="btn btn-eliminar">
             Ver
           </button>
 
           <ul className="listado-tarea">
-            {anuncios.length === 0 ? (
+            {anunciospr.length === 0 ? (
               <li className="misAnuncios">
                 <p>No hay anuncios</p>
               </li>
             ) : (
-              anuncios.map((anuncios) => <MisAnuncios misAnuncios={anuncios} />)
+              anunciospr.map((anunciospr) => <MisAnuncios misAnuncios={anunciospr} />)
             )}
           </ul>
           

@@ -86,17 +86,18 @@ export default class AdsList extends Component {
           <h2 className="m-2 text-white">Busqueda:</h2>
           <div className="form-group d-flex">
             <input className="form-control m-2" type="text" id="name" placeholder="Nombre" value={formName} onChange={this.nameController}></input>
-            <select className="form-control m-2" id="compra-venta" value={formSellOrBuy} onChange={this.sellController}>
-              <option value="buy">Compra</option>
-              <option value="sell">Venta</option>
-              <option value="">Comprar o Vender</option>
-            </select>
+            
             <select className="form-control m-2" id="tags" value={formTags} onChange={this.tagController}>
               <option value="lifestyle">Lifestyle</option>
               <option value="mobile">Mobile</option>
               <option value="motor">Motor</option>
               <option value="work">Work</option>
               <option value="">Tags</option>
+            </select>
+            <select className="form-control m-2" id="compra-venta" value={formSellOrBuy} onChange={this.sellController}>
+              <option value="buy">Compra</option>
+              <option value="sell">Venta</option>
+              <option value="">Comprar o Vender</option>
             </select>
           </div>
           

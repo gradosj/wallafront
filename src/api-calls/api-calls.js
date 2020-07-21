@@ -82,7 +82,7 @@ async function createAd(name, price, desc, tag, type, photo) {
     console.log('info-create-AD');
     return axios({
         method: 'POST',
-        url: `http://34.89.93.186:8080/apiv1/anuncios/`,
+        url: `/apiv/anunciospr/`,
         data: {
             name: `${name}`,
             price: `${price}`,
@@ -100,20 +100,20 @@ async function createAd(name, price, desc, tag, type, photo) {
             return error.response.data;
         })
 }
-async function modifyAd(name, price, desc, tag, type, photo, idMongo) {
+async function modifyAd(nombre, precio, descripcion, tags, venta, foto, idMongo) {
     console.log('modifyAD');
     return axios({
         method: 'PUT',
-        url: `http://34.89.93.186:8080/apiv1/anuncios/${idMongo}`,
+        url: `http://localhost:3000/api/anunciospr/${idMongo}`,
         data: {
-            name: `${name}`,
-            price: `${price}`,
-            description: `${desc}`,
-            tags: `${tag}`,
-            type: `${type}`,
-            photo: `${photo}`,
+            name: `${nombre}`,
+            price: `${precio}`,
+            description: `${descripcion}`,
+            tags: `${tags}`,
+            type: `${venta}`,
+            photo: `${foto}`,
         },
-        withCredentials: true,
+        
     })
         .then(function (response) {
             return response.data;

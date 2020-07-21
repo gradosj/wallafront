@@ -239,7 +239,7 @@ const NuevoAnuncioB = () => {
             type="submit"
             className="btn btn-primario btn-submit btn-block "
             placeholder="nombre tarea"
-            value="Agregar Tarea"
+            value="Agregar Anuncio"
             onClick={() => mostrarFormulario()}
             onChange={onChangeAnuncio}
           />

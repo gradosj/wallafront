@@ -38,20 +38,7 @@ const NuevoAnuncion = () => {
         {" "}
         Nuevo Anuncio{" "}
       </button>
-
-      {formulario ? (
-        <form className="formulario-nuevo-anuncio">
-          <input
-            type="text"
-            className="input-text"
-            placeholder="Nombre Proyecto"
-            name="nombre"
-            value={nombre}
-            onChange={onChangeAnuncio}
-          />
-        </form>
-      ) : null}
-
+      
       
       <button
         type="button"
