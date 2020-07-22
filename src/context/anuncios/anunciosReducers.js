@@ -14,8 +14,7 @@ export default (state, action) => {
         formulario: true,
         formularioFav: false,
         formularioDatPers: false,
-        formularioAnun: false
-
+        formularioAnun: false,
       };
     case LISTADO_FAVORITOS:
       return {
@@ -23,7 +22,7 @@ export default (state, action) => {
         formulario: false,
         formularioFav: true,
         formularioDatPers: false,
-        formularioAnun: false
+        formularioAnun: false,
       };
     case DATOS_PERSONALES:
       return {
@@ -31,22 +30,22 @@ export default (state, action) => {
         formulario: false,
         formularioFav: false,
         formularioDatPers: true,
-        formularioAnun: false
+        formularioAnun: false,
       };
-    
-      case LISTADO_MIS_ANUNCIOS:
+
+    case LISTADO_MIS_ANUNCIOS:
       return {
         ...state,
         formulario: false,
         formularioFav: false,
         formularioDatPers: false,
-        formularioAnun: true
+        formularioAnun: true,
       };
-      case OBTENER_PROYECTOS:
-        return {
-          ...state,
-          proyectos: action.payload
-        }
+    case OBTENER_PROYECTOS:
+      return {
+        ...state,
+        proyectos: action.payload,
+      };
 
     default:
       return state;

@@ -10,7 +10,7 @@ const NuevoAnuncion = () => {
     mostrarFormulario,
     listadoFavoritos,
     mostrarMisAnuncios,
-    mostrarDatPers
+    mostrarDatPers,
   } = anunciosContext;
 
   //State para anuncios
@@ -38,8 +38,7 @@ const NuevoAnuncion = () => {
         {" "}
         Nuevo Anuncio{" "}
       </button>
-      
-      
+
       <button
         type="button"
         className="btn btn-block btn-primario"

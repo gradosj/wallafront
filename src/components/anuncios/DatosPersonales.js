@@ -13,10 +13,7 @@ const DatosPersonales = () => {
     nombre: "",
   });
 
-  const datosPers = [
-    { nombre: "Usuario", password: "password", estado: true },
-    
-  ];
+  const datosPers = [{ nombre: "Usuario", password: "password", estado: true }];
   return (
     <Fragment>
       {formularioDatPers ? (
@@ -29,7 +26,9 @@ const DatosPersonales = () => {
                 <p>No hay anuncios</p>
               </li>
             ) : (
-              datosPers.map((datosPers) => <MisDatPers misDatPers={datosPers} />)
+              datosPers.map((datosPers) => (
+                <MisDatPers misDatPers={datosPers} />
+              ))
             )}
           </ul>
         </div>

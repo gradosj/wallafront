@@ -24,7 +24,6 @@ if (token) {
 }
 
 function App() {
- 
   return (
     <Fragment>
       <AnunciosState>

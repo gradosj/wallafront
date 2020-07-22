@@ -1,55 +1,45 @@
-import React, {useReducer} from 'react';
-import alertaReducer from './alertaReducer';
-import alertaContext from './alertaContext';
+import React, { useReducer } from "react";
+import alertaReducer from "./alertaReducer";
+import alertaContext from "./alertaContext";
 
+import { MOSTRAR_ALERTA, OCULTAR_ALERTA } from "./../../types";
 
-import {MOSTRAR_ALERTA, OCULTAR_ALERTA} from './../../types';
+const AlertaState = (props) => {
+  const initialState = {
+    alerta: null,
+  };
 
+  const [state, dispatch] = useReducer(alertaReducer, initialState);
 
-const AlertaState = props => {
-    const initialState = {
-        alerta: null
-        
-    }
+  //funciones
+  const mostrarAlerta = (msg, categoria) => {
+    dispatch({
+      type: MOSTRAR_ALERTA,
+      payload: {
+        msg,
+        categoria,
+      },
+    });
 
-    const [state, dispatch] = useReducer(alertaReducer, initialState);
+    setTimeout(() => {
+      dispatch({
+        type: OCULTAR_ALERTA,
+      });
+    }, 5000);
+  };
 
-    //funciones
-    const mostrarAlerta = (msg, categoria) => {
-        dispatch({
-            type: MOSTRAR_ALERTA,
-            payload: {
-                msg,
-                categoria
-            }
-        });
+  console.log(alertaContext.Provider.value);
 
-
-
-        setTimeout(() => {
-            dispatch({
-                type: OCULTAR_ALERTA
-            })
-        }, 5000);
-
-    }
-    
-console.log(alertaContext.Provider.value);
-    
-    return (
-        <alertaContext.Provider
-            value={{
-                alerta: state.alerta,
-                mostrarAlerta
-
-            }}
-            >
-            {props.children}
-
-        </alertaContext.Provider>
-    )
-
-    
-}
+  return (
+    <alertaContext.Provider
+      value={{
+        alerta: state.alerta,
+        mostrarAlerta,
+      }}
+    >
+      {props.children}
+    </alertaContext.Provider>
+  );
+};
 
 export default AlertaState;

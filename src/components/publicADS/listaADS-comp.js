@@ -21,7 +21,6 @@ class AddMount extends Component {
             </Link>
           </div>
         </div>
-
       </>
     );
   }
