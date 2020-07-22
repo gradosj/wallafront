@@ -1,3 +1,16 @@
+
+### ------------------------------------
+
+# NODEPOP - PRACTICA Front BOOTCAMP
+Puesto que no me ha dado tiempo el subir la practica en su totalidad al servidor, se debera de probar de forma local. 
+back: https://github.com/gradosj/myAPI.git (abrir en puerto 3000)
+front: https://github.com/gradosj/wallafront
+
+
+# Wallafront
+Codigo de front End escrito en reactJs, iniciar la api para su correcta visualizacion.  
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
