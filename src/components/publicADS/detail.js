@@ -10,7 +10,7 @@ export default class DetailComponent extends Component {
     };
   }
   evaluator = () => {
-    console.log("aquiiiiiiiiiiiiiiiiiiiiiiiiii", this.state.responseState);
+  
     if (this.state.responseState.result) {
       this.setState({
         whatWeRender: <DetailIsOk data={this.state.responseState.result} />,
@@ -23,7 +23,7 @@ export default class DetailComponent extends Component {
   adCaller = async (id) => {
     this.setState({ responseState: await detailCall(id) });
     this.setState({ pageId: id });
-    console.log(this.state.pageId);
+    
     this.evaluator();
   };
   componentDidMount() {
@@ -49,9 +49,7 @@ class DetailIsOk extends Component {
   }
   
   render() {
-    console.log("esto es------> ", this.props.data);
-    console.log(this.props.data.descripcion);
-    console.log(this.props.data.venta);
+ 
 
     return (
       <Fragment>

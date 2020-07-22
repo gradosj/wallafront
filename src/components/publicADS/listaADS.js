@@ -72,10 +72,7 @@ export default class AdsList extends Component {
       formPriceMax,
       formSellOrBuy,
     } = this.state;
-    console.log("nuevo-put");
-    console.log(this.state.formName);
-    console.log(this.state.responseState);
-    console.log(this.state.childrenToRender);
+
 
     return (
       <>

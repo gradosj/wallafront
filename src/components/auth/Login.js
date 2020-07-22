@@ -43,8 +43,6 @@ const Login = (props) => {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    console.log("aaaaaaaaaaaaaaaaaabbbbbbbbbbbbbb");
-    console.log(email.trim());
     // Validar que no haya campos vacios
     if (email.trim() === "" || password.trim() === "") {
       mostrarAlerta("Todos los campos son obligatorios", "alerta-error");

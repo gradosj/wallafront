@@ -4,7 +4,7 @@ import AnunciosContext from "../../context/anuncios/anunciosContext";
 import AnunciosPRContext from "../../context/anunciosPR/anunciosPRContext";
 
 const ListadoAnuncios = () => {
-  console.log("listado anuncios");
+  
   // Obtener el state del formulario
 
   //extraemos del state inicial y revisamos si tiene contenido

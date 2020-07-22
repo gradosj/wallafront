@@ -58,10 +58,10 @@ const AnunciosState = (props) => {
 
   // Agregar un anuncio
   const agregarAnuncio = async (anuncio) => {
-    console.log(anuncio);
+  
     try {
       const resultado = await clienteAxios.post("/api/anuncios/post", anuncio);
-      console.log(resultado);
+    
       dispatch({
         type: AGREGAR_ANUNCIO,
         payload: anuncio,

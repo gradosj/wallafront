@@ -63,7 +63,7 @@ const NuevoAnuncioB = () => {
   const { nombre, venta, precio, foto, descripcion, tags } = anuncio;
 
   const onChangeAnuncio = (e) => {
-    console.log(e.target.value);
+
     guardarAnuncio({
       ...anuncio,
       [e.target.name]: e.target.value,

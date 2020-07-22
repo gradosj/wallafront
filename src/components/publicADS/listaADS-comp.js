@@ -36,8 +36,7 @@ function RenderOrNot(props) {
   const callDo = props.callDo;
   let toShow = [];
   if (callDo) {
-    console.log("desde add-utils joselito: ", props.data.length);
-    console.log(props.data);
+
     for (let i = 0; i < props.data.length; i++) {
       toShow.push(<AddMount key={i} data={props.data[i]} />);
     }
@@ -51,7 +50,7 @@ function RenderOrNot(props) {
 }
 
 function createQueryString(name, sellOrBuy, tags, priceMin, priceMax) {
-  console.log("entra por querystring");
+ 
   let queryString = "";
   if (name !== "") {
     queryString = "?nombre=" + name;
@@ -93,7 +92,7 @@ function createQueryString(name, sellOrBuy, tags, priceMin, priceMax) {
       }
     }
   }
-  console.log("desde listaADS-comp --> ", queryString);
+  
   return queryString;
 }
 export { RenderOrNot, createQueryString };

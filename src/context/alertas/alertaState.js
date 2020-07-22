@@ -28,7 +28,7 @@ const AlertaState = (props) => {
     }, 5000);
   };
 
-  console.log(alertaContext.Provider.value);
+
 
   return (
     <alertaContext.Provider

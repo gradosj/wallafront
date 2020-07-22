@@ -2,8 +2,7 @@ import React, { useContext } from "react";
 import AnunciosPRContext from "../../context/anunciosPR/anunciosPRContext";
 
 const MisAnuncios = ({ misAnuncios }) => {
-  console.log("desde Mis anuncios");
-  console.log(misAnuncios);
+ 
 
   return (
     <li className="tarea sombra">
