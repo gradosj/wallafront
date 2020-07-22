@@ -19,7 +19,7 @@ const AnuncioPRState = (props) => {
   const [state, dispatch] = useReducer(AnunciosPRReducer, initialState);
 
 
-  // Obtener las tareas de un proyecto
+  
   const mostrarMisAnuncios = async ()  => {
     try {
       

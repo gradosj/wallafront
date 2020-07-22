@@ -1,7 +1,6 @@
 import React from 'react'
 
 
-/* Desde tareas  TAREA*/ 
 
 const MisDatPers = ({misDatPers}) => {
     console.log('desde Mis anuncios');

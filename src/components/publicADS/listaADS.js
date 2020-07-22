@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { addCall } from './../../api-calls/api-calls';
-import { RenderOrNot, createQueryString } from './addlist-utils';
+import { addCall } from '../../api-calls/api-calls';
+import { RenderOrNot, createQueryString } from './listaADS-comp';
 
 export default class AdsList extends Component {
   constructor(props) {

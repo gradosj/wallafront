@@ -63,7 +63,7 @@ const AnunciosState = props => {
     }
 
 
-     // Agregar una tarea al proyecto seleccionado
+     // Agregar un anuncio
      const agregarAnuncio = async anuncio => {
         console.log(anuncio);
         try {

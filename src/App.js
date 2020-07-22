@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Link, Route } from "react-router-dom";
 import Login from "./components/auth/Login";
 import NuevaCuenta from "./components/auth/NuevaCuenta";
 import Privado from "./components/anuncios/Privado";
-import AdsComp from "./components/publicADS/addlist";
+import AdsComp from "./components/publicADS/listaADS";
 import DetailComponent from "./components/publicADS/detail";
 
 import AnunciosState from "./context/anuncios/anunciosState";
@@ -24,7 +24,7 @@ if (token) {
 }
 
 function App() {
-  console.log(process.env.REACT_APP_BACKEND_URL);
+ 
   return (
     <Fragment>
       <AnunciosState>

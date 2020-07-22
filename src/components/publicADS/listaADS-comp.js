@@ -94,7 +94,7 @@ function createQueryString(name, sellOrBuy, tags, priceMin, priceMax) {
       }
     }
   }
-  console.log("desde addlist-utils --> ", queryString);
+  console.log("desde listaADS-comp --> ", queryString);
   return queryString;
 }
 export { RenderOrNot, createQueryString };

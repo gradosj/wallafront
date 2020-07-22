@@ -3,13 +3,13 @@ import AnunciosPRContext from '../../context/anunciosPR/anunciosPRContext';
 
 
 
-/* Desde tareas  TAREA*/ 
+
 
 const MisAnuncios = ({misAnuncios}) => {
     console.log('desde Mis anuncios');
     console.log(misAnuncios);
 
-    //obtener funcion de context de tarea
+  
 
   
 
