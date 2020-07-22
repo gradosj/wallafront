@@ -6,6 +6,10 @@ Puesto que no me ha dado tiempo el subir la practica en su totalidad al servidor
 back: https://github.com/gradosj/myAPI.git (abrir en puerto 3000)
 front: https://github.com/gradosj/wallafront
 
+# NOTA ERRORES:
+    - La imagen no se guarda correctamente porque se está cogiendo el event.target.value, se deberia de haber cogido el event.target.files[0].
+
+
 
 # Wallafront
 Codigo de front End escrito en reactJs, iniciar la api para su correcta visualizacion.  
